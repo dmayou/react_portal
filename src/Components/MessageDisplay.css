@@ -11,7 +11,7 @@
 
 .MessageDisplay input {
     font-size: 16px;
-    margin-left: 10px;
+    margin-left: 50px;
     padding: 5px;
     border-radius: 12px;
 }
@@ -32,7 +32,6 @@
     color: black;
     padding: 10px 20px;
     margin: 6px 2px;
-    cursor: pointer;
     border-radius: 16px;
 }
 
@@ -43,6 +42,5 @@
     color: black;
     padding: 10px 20px;
     margin: 6px 2px 6px 75px;
-    cursor: pointer;
     border-radius: 16px;
 }
