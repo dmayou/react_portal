@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import { Socket } from 'react-socket-io';
 import { useSelector } from 'react-redux';
 import './Portal.css';
 
 import Input from './Input';
+
+const uri = 'http://localhost:5000';
+const options = { transports: ['websocket'] };
 
 function Portal() {
     const showPortal = useSelector( state => state.showPortal );
@@ -25,8 +29,10 @@ function Portal() {
     };
     return ReactDOM.createPortal(
         <div className="Portal">
-            <Input />
-            <button onClick={handleClick}>Talk with ELIZA</button>
+            <Socket uri={uri} options={options}>
+                <Input />
+                <button onClick={handleClick}>Talk with ELIZA</button>
+            </Socket>
         </div>,
         el,
     );
