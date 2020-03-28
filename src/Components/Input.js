@@ -1,15 +1,20 @@
-import React, { useReducer } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './Input.css';
 
 function Input() {
-    const [name, updateName] = useReducer('');
+    const dispatch = useDispatch();
+    const name = useSelector(state => state);
+    const handleChange = (event) => {
+        dispatch({
+            type: 'SET_NAME',
+            payload: event.target.value
+        });
+    };
     return (
-        <div>
-            <label>What's your name?
-                <input placeholder="name" />
-            </label>
-        </div>
+        <label>What's your name?
+            <input onChange={handleChange} value={name} placeholder="name" />
+        </label>
     );
 }
 
