@@ -20,6 +20,7 @@ function Portal() {
     return ReactDOM.createPortal(
         <div className="Portal">
             <Input />
+            <button>Talk with ELIZA</button>
         </div>,
         el,
     );
