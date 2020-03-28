@@ -10,10 +10,10 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-import reducers from './redux/reducers';
+import showPortal from './redux/reducers';
 
 const store = createStore(
-  reducers,
+  showPortal,
   applyMiddleware(logger),
 );
 

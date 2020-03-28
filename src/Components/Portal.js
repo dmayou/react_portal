@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
 
-function Portal(props) {
+function Portal({ showPortal }) {
     const portalRoot = document.getElementById('portal-root');
     const el = document.createElement('div');
     useEffect(() => {
-        portalRoot.appendChild(el);
-        return () => {
-            portalRoot.removeChild(el);
-        };
+        if (showPortal) {
+            portalRoot.appendChild(el);
+            return () => {
+                portalRoot.removeChild(el);
+            };
+        }
     });
     return ReactDOM.createPortal(
         <div style={{backgroundColor: 'pink'}}>Hello World</div>,
@@ -16,4 +19,10 @@ function Portal(props) {
     );
 }
 
-export default Portal;
+const mapStateToProps = (state) => {
+    return {
+        showPortal: state,
+    };
+};
+
+export default connect(mapStateToProps)(Portal);
