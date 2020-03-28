@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import logo from '../logo.svg';
 import './App.css';
 
 function App(props) {
-  const { dispatch, showPortal } = props;
+  const { dispatch } = props;
+  const showPortal = useSelector( state => state );
   const handleClick = () => {
     dispatch({ type: 'TOGGLE_PORTAL', payload: null })
   };
