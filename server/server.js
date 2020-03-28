@@ -22,6 +22,13 @@ io.on('connection', function (socket) {
         }, delay,
         );
     });
+    socket.on('reply', function(reply) {
+        setTimeout(function() {
+            //remove punctuation
+            reply = reply.replace(/[,.?!]/gi, '');
+            socket.emit('reply', `I have no thoughts on '${reply}.'`);
+        }, delay, );
+    });
     socket.on('disconnect', function () {
         console.log('Info: disconnection');
     });

@@ -5,6 +5,7 @@ import io from 'socket.io-client';
 
 import './Portal.css';
 import Input from './Input';
+import MessageDisplay from './MessageDisplay';
 
 function Portal() {
     const uri = 'http://localhost:5000';
@@ -29,12 +30,13 @@ function Portal() {
             socket = null;
         };
     });
-    const emitName = (msg) => {
-        socket.emit('name', msg);
+    const emit = (socketEvent) => (msg) => {
+        socket.emit(socketEvent, msg);
     };
     return ReactDOM.createPortal(
         <div className="Portal">
-            <Input emitName={emitName}/>
+            <Input emitName={emit('name')}/>
+            <MessageDisplay emitReply={emit('reply')} />
         </div>,
         el,
     );
