@@ -15,13 +15,14 @@ function Input(props) {
     };
     const handleClick = (event) => {
         emitName(name);
+        changeShowButton(false);
     };
     return (
         <div>
         <label>What's your name?
             <input onChange={handleChange} value={name} placeholder="name" />
         </label>
-            <button onClick={handleClick} disabled={!name}>Talk with ELIZA</button>
+            {showButton && <button onClick={handleClick} disabled={!name}>Talk with ELIZA</button>}
         </div>
     );
 }
