@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { Socket } from 'react-socket-io';
 import { useSelector } from 'react-redux';
 import './Portal.css';
 
@@ -29,10 +28,8 @@ function Portal() {
     };
     return ReactDOM.createPortal(
         <div className="Portal">
-            <Socket uri={uri} options={options}>
-                <Input />
-                <button onClick={handleClick}>Talk with ELIZA</button>
-            </Socket>
+            <Input />
+            <button onClick={handleClick}>Talk with ELIZA</button>
         </div>,
         el,
     );

@@ -39,7 +39,6 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "^2.0.2",
-    "react-socket-io": "^0.2.5"
+    "nodemon": "^2.0.2"
   }
 }
