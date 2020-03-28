@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { useSelector } from 'react-redux';
 import './Portal.css';
 
+import Input from './Input';
+
 function Portal() {
     const showPortal = useSelector( state => state );
     const portalRoot = document.getElementById('portal-root');
@@ -16,7 +18,9 @@ function Portal() {
         }
     });
     return ReactDOM.createPortal(
-        <div className="Portal">Hello World</div>,
+        <div className="Portal">
+            <Input />
+        </div>,
         el,
     );
 }
