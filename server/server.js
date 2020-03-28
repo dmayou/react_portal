@@ -14,6 +14,9 @@ app.get('/api/ping', function(req, res) {
 // Socket io
 io.on('connection', function (socket) {
     console.log('Info: new connection');
+    socket.on('disconnect', function () {
+        console.log('Info: disconnection');
+    });
 });
 
 // App Set //
