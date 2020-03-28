@@ -9,13 +9,13 @@ function App() {
   const handleClick = () => {
     dispatch({ type: 'TOGGLE_PORTAL', payload: null })
   };
-  const btnText = showPortal ? 'Close Portal' : 'Open Portal';
+  const btnText = showPortal ? 'End Session' : 'Talk with ELIZA';
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <code>ELIZA</code> with React Portals, Hooks and Redux Hooks.
         </p>
         <button onClick={handleClick}>
           {btnText}
