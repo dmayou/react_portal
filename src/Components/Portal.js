@@ -6,7 +6,7 @@ import './Portal.css';
 import Input from './Input';
 
 function Portal() {
-    const showPortal = useSelector( state => state );
+    const showPortal = useSelector( state => state.showPortal );
     const portalRoot = document.getElementById('portal-root');
     const el = document.createElement('div');
     useEffect(() => {

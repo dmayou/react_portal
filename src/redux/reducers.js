@@ -1,4 +1,4 @@
-import { combineReducers } from 'react-redux';
+import { combineReducers } from 'redux';
 
 const showPortal = (state = true, action) => {
     switch (action.type) {
