@@ -1,11 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import logo from '../logo.svg';
 import './App.css';
 
-function App(props) {
-  const { dispatch } = props;
+function App() {
+  const dispatch = useDispatch();
   const showPortal = useSelector( state => state );
   const handleClick = () => {
     dispatch({ type: 'TOGGLE_PORTAL', payload: null })
@@ -26,10 +25,4 @@ function App(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    showPortal: state,
-  };
-};
-
-export default connect(mapStateToProps)(App);
+export default App;
