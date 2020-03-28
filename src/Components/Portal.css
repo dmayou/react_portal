@@ -1,0 +1,18 @@
+.Portal {
+    background-color: azure;
+    margin-left: 50vw;
+    margin-right: 1vw;
+    position: relative;
+    top: -5vw;
+    min-height: 20vw;
+    border: 1px solid black;
+    border-radius: 4px;;
+}
+
+@media only screen and (max-width: 1024px) {
+  .Portal { margin-left: 35vw;}  
+}
+
+@media only screen and (max-width: 400px) {
+  .Portal { margin-left: 25vw; top: -12vw;}
+}
