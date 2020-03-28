@@ -17,10 +17,16 @@ function Portal() {
             };
         }
     });
+    const makeSocketConnection = () => {
+
+    };
+    const handleClick = () => {
+        const socketConn = makeSocketConnection();
+    };
     return ReactDOM.createPortal(
         <div className="Portal">
             <Input />
-            <button>Talk with ELIZA</button>
+            <button onClick={handleClick}>Talk with ELIZA</button>
         </div>,
         el,
     );
