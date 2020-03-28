@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-function Portal({ showPortal }) {
+function Portal() {
+    const showPortal = useSelector( state => state );
     const portalRoot = document.getElementById('portal-root');
     const el = document.createElement('div');
     useEffect(() => {
@@ -19,10 +20,4 @@ function Portal({ showPortal }) {
     );
 }
 
-const mapStateToProps = (state) => {
-    return {
-        showPortal: state,
-    };
-};
-
-export default connect(mapStateToProps)(Portal);
+export default Portal;
