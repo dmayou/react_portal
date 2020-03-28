@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { useSelector } from 'react-redux';
+import './Portal.css';
 
 function Portal() {
     const showPortal = useSelector( state => state );
@@ -15,7 +16,7 @@ function Portal() {
         }
     });
     return ReactDOM.createPortal(
-        <div style={{backgroundColor: 'pink'}}>Hello World</div>,
+        <div className="Portal">Hello World</div>,
         el,
     );
 }

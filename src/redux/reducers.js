@@ -1,4 +1,4 @@
-const showPortal = (state = false, action) => {
+const showPortal = (state = true, action) => {
     switch (action.type) {
         case 'TOGGLE_PORTAL':
             return !state;
