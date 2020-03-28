@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Components/App';
+import Portal from './Components/Portal';
+
 import * as serviceWorker from './serviceWorker';
 
 import { createStore, applyMiddleware } from 'redux';
@@ -19,9 +21,10 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
+      <Portal />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change
