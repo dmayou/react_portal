@@ -12,10 +12,18 @@ app.get('/api/ping', function(req, res) {
 });
 
 // Socket io
+const echoName = (name) => {
+    console.log(`In echoName. name=${name}`);
+};
+
 io.on('connection', function (socket) {
     console.log('Info: new connection');
+    socket.on('name', echoName);
     socket.on('disconnect', function () {
         console.log('Info: disconnection');
+    });
+    socket.on('error', function (err) {
+        console.error(`Socket Error: ${err}`);
     });
 });
 
