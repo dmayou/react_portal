@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import { useSelector } from 'react-redux';
 import './Portal.css';
 
+import Input from './Input';
+
 function Portal() {
-    const showPortal = useSelector( state => state );
+    const showPortal = useSelector( state => state.showPortal );
     const portalRoot = document.getElementById('portal-root');
     const el = document.createElement('div');
     useEffect(() => {
@@ -16,7 +18,10 @@ function Portal() {
         }
     });
     return ReactDOM.createPortal(
-        <div className="Portal">Hello World</div>,
+        <div className="Portal">
+            <Input />
+            <button>Talk with ELIZA</button>
+        </div>,
         el,
     );
 }

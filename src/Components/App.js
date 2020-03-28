@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   const dispatch = useDispatch();
-  const showPortal = useSelector( state => state );
+  const showPortal = useSelector( state => state.showPortal );
   const handleClick = () => {
     dispatch({ type: 'TOGGLE_PORTAL', payload: null })
   };
