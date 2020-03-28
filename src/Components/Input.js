@@ -4,7 +4,7 @@ import './Input.css';
 
 function Input() {
     const dispatch = useDispatch();
-    const name = useSelector(state => state);
+    const name = useSelector(state => state.name);
     const handleChange = (event) => {
         dispatch({
             type: 'SET_NAME',
