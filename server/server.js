@@ -3,6 +3,8 @@ const app = express();
 const http = require('http').createServer(app);
 var io = require('socket.io')(http);
 
+const delay = 500; //ms
+
 // Serve static files
 app.use(express.static('build'));
 
@@ -12,13 +14,14 @@ app.get('/api/ping', function(req, res) {
 });
 
 // Socket io
-const echoName = (name) => {
-    console.log(`In echoName. name=${name}`);
-};
-
 io.on('connection', function (socket) {
     console.log('Info: new connection');
-    socket.on('name', echoName);
+    socket.on('name', function(name) {
+        setTimeout(function() {
+            socket.emit('reply', `Nice to meet you, ${name}.`)
+        }, delay,
+        );
+    });
     socket.on('disconnect', function () {
         console.log('Info: disconnection');
     });
