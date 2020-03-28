@@ -23,7 +23,7 @@ function MessageDisplay(props) {
             </ul>
             <form onSubmit={handleSubmit}>
                 {!!messages.length && 
-                <input placeholder="type your reply" value={reply} onChange={handleChange}/>}
+                <input autoFocus placeholder="type your reply" value={reply} onChange={handleChange}/>}
             </form>
         </div>
     );

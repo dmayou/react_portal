@@ -7,11 +7,9 @@ function App() {
   const dispatch = useDispatch();
   const showPortal = useSelector( state => state.showPortal );
   const handleClick = () => {
+    dispatch({ type: 'CLEAR_MESSAGES' });
+    dispatch({ type: 'UNSET_NAME' });
     dispatch({ type: 'TOGGLE_PORTAL' });
-    if (showPortal) {
-      dispatch({ type: 'CLEAR_MESSAGES' });
-      dispatch({ type: 'UNSET_NAME' });
-    };
   };
   const btnText = showPortal ? 'End Session' : 'Talk with ELIZA';
   return (
