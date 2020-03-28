@@ -1,3 +1,5 @@
+import { combineReducers } from 'react-redux';
+
 const showPortal = (state = true, action) => {
     switch (action.type) {
         case 'TOGGLE_PORTAL':
@@ -7,4 +9,18 @@ const showPortal = (state = true, action) => {
     }
 };
 
-export default showPortal;
+const name = (state = '', action) => {
+    switch (action.type) {
+        case 'SET_NAME':
+            return action.payload;
+        default:
+            return state;
+    }
+};
+
+const reducers = combineReducers({
+    showPortal,
+    name,
+});
+
+export default reducers;
