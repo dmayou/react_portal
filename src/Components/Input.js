@@ -18,11 +18,15 @@ function Input(props) {
         changeShowButton(false);
     };
     return (
-        <div>
-        <label>What's your name?
-            <input onChange={handleChange} value={name} placeholder="name" />
-        </label>
-            {showButton && <button onClick={handleClick} disabled={!name}>Talk with ELIZA</button>}
+        <div className="Input">
+            <label>What's your name?
+                <input onChange={handleChange} 
+                    value={name} placeholder="name" />
+            </label>
+                {showButton && 
+                    <button onClick={handleClick} 
+                        disabled={!name}>Talk with ELIZA
+                    </button>}
         </div>
     );
 }
