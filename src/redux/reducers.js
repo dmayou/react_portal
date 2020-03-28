@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-const showPortal = (state = true, action) => {
+const showPortal = (state = false, action) => {
     switch (action.type) {
         case 'TOGGLE_PORTAL':
             return !state;
