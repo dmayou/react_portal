@@ -16,10 +16,15 @@ function MessageDisplay(props) {
         dispatch({ type: 'ADD_REPLY', payload: reply });
         changeReply('');
     };
+    const messageList = messages?.map((msg, i) => 
+        <li key={i} className={i % 2 ? "UserLI" : "ResponseLI"}>
+            {msg}
+        </li>
+    );
     return (
-        <div>
+        <div className="MessageDisplay">
             <ul>
-                {messages?.map( (msg, i) => <li key={i}>{msg}</li>)}
+                {messageList}
             </ul>
             <form onSubmit={handleSubmit}>
                 {!!messages.length && 
