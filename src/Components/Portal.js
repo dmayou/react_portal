@@ -23,7 +23,7 @@ function Portal() {
         }
     });
     useEffect(() => {
-        socket = io(uri);
+        socket = io();
         socket.on('reply', (reply) => dispatch({ type: 'ADD_REPLY', payload: reply }));
         socket.on('disconnect', () => dispatch({ type: 'DISCONNECT', payload: null }));
         return function() {
