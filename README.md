@@ -13,9 +13,12 @@ The useEffect hook is helpful for dependencies that must be initialized when the
 
 Redux Hooks remove some of the boilerplate in the components required by the connect() higher-order component.
 
-Note: currently the following planned features are unimplemented:
-- ELIZA responses based on user input
-- General styling of the portal page
+## Known Issues
+- App displays but does not gracefully handle socket disconnect messages.
+- All users share a single instance of the ElizaBot
+
+## Credits
+This app uses an ElizaBot class from https://www.masswerk.at/elizabot/, which in turn is based on the work of Joseph Weizenbaum at the MIT Artificial Intelligence Laboratory during the 1960's.
 
 ## Getting Started
 

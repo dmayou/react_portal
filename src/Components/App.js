@@ -23,6 +23,7 @@ function App() {
           {btnText}
         </button>
       </header>
+      <a href="https://en.wikipedia.org/wiki/ELIZA">What's ELIZA?</a>
     </div>
   );
 }

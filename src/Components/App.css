@@ -60,7 +60,10 @@
   background-color:#ccc2a6;
 }
 
-.App-link {
+.App a {
+  font-size: 10px;
+  position: relative;
+  bottom: 25px;
   color: #61dafb;
 }
 
