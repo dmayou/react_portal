@@ -1,32 +1,33 @@
 // data for elizabot.js
 // entries prestructured as layed out in Weizenbaum's description 
 // [cf: Communications of the ACM, Vol. 9, #1 (January 1966): p 36-45.]
+module.exports = {
 
-var elizaInitials = [
+elizaInitials: [
 "How do you do.  Please tell me your problem.",
 // additions (not original)
 "Please tell me what's been bothering you.",
 "Is something troubling you ?"
-];
+],
 
-var elizaFinals = [
+elizaFinals: [
 "Goodbye.  It was nice talking to you.",
 // additions (not original)
 "Goodbye.  This was really a nice talk.",
 "Goodbye.  I'm looking forward to our next session.",
 "This was a good session, wasn't it -- but time is over now.   Goodbye.",
 "Maybe we could discuss this moreover in our next session ?   Goodbye."
-];
+],
 
-var elizaQuits = [
+elizaQuits: [
 "bye",
 "goodbye",
 "done",
 "exit",
 "quit"
-];
+],
 
-var elizaPres = [
+elizaPres: [
 "dont", "don't",
 "cant", "can't",
 "wont", "won't",
@@ -45,9 +46,9 @@ var elizaPres = [
 "same", "alike",
 "identical", "alike",
 "equivalent", "alike"
-];
+],
 
-var elizaPosts = [
+elizaPosts: [
 "am", "are",
 "your", "my",
 "me", "you",
@@ -57,9 +58,9 @@ var elizaPosts = [
 "you", "I",
 "my", "your",
 "i'm", "you are"
-];
+],
 
-var elizaSynons = {
+elizaSynons: {
 "be": ["am", "is", "are", "was"],
 "belief": ["feel", "think", "believe", "wish"],
 "cannot": ["can't"],
@@ -68,9 +69,9 @@ var elizaSynons = {
 "family": ["mother", "mom", "father", "dad", "sister", "brother", "wife", "children", "child"],
 "happy": ["elated", "glad", "better"],
 "sad": ["unhappy", "depressed", "sick"]
-};
+},
 
-var elizaKeywords = [
+elizaKeywords: [
 
 /*
   Array of
@@ -594,11 +595,11 @@ var elizaKeywords = [
   ]]
 ]]
 
-];
+],
 
 // regexp/replacement pairs to be performed as final cleanings
 // here: cleanings for multiple bots talking to each other
-var elizaPostTransforms = [
+elizaPostTransforms: [
 	/ old old/g, " old",
 	/\bthey were( not)? me\b/g, "it was$1 me",
 	/\bthey are( not)? me\b/g, "it is$1 me",
@@ -606,6 +607,6 @@ var elizaPostTransforms = [
 	/\bthat your( own)? (\w+)( now)? \?/, "that you have your$1 $2 ?",
 	/\bI to have (\w+)/, "I have $1",
 	/Earlier you said your( own)? (\w+)( now)?\./, "Earlier you talked about your $2."
-];
-
+],
+};
 // eof

@@ -45,6 +45,16 @@
             changed code to work around.
 */
 
+const elizaData = require('./elizadata');
+let { elizaKeywords,
+		elizaSynons,
+		elizaPres,
+		elizaPosts,
+		elizaQuits,
+		elizaPostTransforms,
+		elizaInitials,
+		elizaFinals,
+} = elizaData;
 
 function ElizaBot(noRandomFlag) {
 	this.noRandom= (noRandomFlag)? true:false;
@@ -71,7 +81,7 @@ ElizaBot.prototype._dataParsed = false;
 
 ElizaBot.prototype._init = function() {
 	// install ref to global object
-	var global=ElizaBot.prototype.global=self;
+	var global=ElizaBot.prototype.global=elizaData;
 	// parse data and convert it from canonical form to internal use
 	// prodoce synonym list
 	var synPatterns={};
@@ -282,7 +292,7 @@ ElizaBot.prototype._execRule = function(k) {
 				'\nreasmb: '+rpl+
 				'\nmemflag: '+memflag);
 			if (rpl.search('^goto ', 'i')==0) {
-				ki=this._getRuleIndexByKey(rpl.substring(5));
+				const ki=this._getRuleIndexByKey(rpl.substring(5));
 				if (ki>=0) return this._execRule(ki);
 			}
 			// substitute positional params (v.1.1: work around lambda function)
@@ -389,3 +399,4 @@ if (typeof Array.prototype.shift == 'undefined') {
 }
 
 // eof
+module.exports = ElizaBot;
