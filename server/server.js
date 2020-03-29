@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const http = require('http').createServer(app);
-var io = require('socket.io')(http);
+const io = require('socket.io')(http);
+
+const eliza = require('./modules/eliza').elizaInit();
 
 const delay = 500; //ms
 
@@ -17,16 +19,16 @@ app.get('/api/ping', function(req, res) {
 io.on('connection', function (socket) {
     console.log('Info: new connection');
     socket.on('name', function(name) {
-        setTimeout(function() {
-            socket.emit('reply', `Nice to meet you, ${name}.`)
-        }, delay,
+        socket.emit(
+            'reply',
+            `Nice to meet you, ${name}. ${eliza.getInitial()}`,
         );
     });
     socket.on('reply', function(reply) {
         setTimeout(function() {
             //remove punctuation
             reply = reply.replace(/[,.?!]/gi, '');
-            socket.emit('reply', `I have no thoughts on '${reply}.'`);
+            socket.emit('reply', eliza.transform(reply));
         }, delay, );
     });
     socket.on('disconnect', function () {
