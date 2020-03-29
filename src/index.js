@@ -6,15 +6,15 @@ import Portal from './Components/Portal';
 
 import * as serviceWorker from './serviceWorker';
 
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, /*applyMiddleware*/ } from 'redux';
 import { Provider } from 'react-redux';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 
 import reducers from './redux/reducers';
 
 const store = createStore(
   reducers,
-  applyMiddleware(logger),
+  // applyMiddleware(logger),
 );
 
 ReactDOM.render(
