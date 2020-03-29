@@ -23,7 +23,10 @@ function App() {
           {btnText}
         </button>
       </header>
-      <a href="https://en.wikipedia.org/wiki/ELIZA">What's ELIZA?</a>
+      <a href="https://en.wikipedia.org/wiki/ELIZA"
+        rel="noopener noreferrer" target="_blank">
+        What's ELIZA?
+      </a>
     </div>
   );
 }
